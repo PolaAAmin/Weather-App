@@ -52,7 +52,7 @@
                 aria-expanded="false" id="btn-dpd-menu">
                 Select a City
             </button>
-            <ul class="dropdown-menu" id="dpd-list">
+            <ul class="dropdown-menu" id="dpd-list" style="height: 300px; overflow: auto;">
                 <li><a class="dropdown-item" href="#" id="london" value="London">London</a></li>
                 <li><a class="dropdown-item" href="#" id="paris" value="Paris">Paris</a></li>
                 <li><a class="dropdown-item" href="#" id="berlin" value="Berlin">Berlin</a></li>
@@ -61,19 +61,16 @@
         </div>
 
         <div class="my-3">
-            <h2 class="text-center" id="city-name"></h2>
-            <p class="text-center display-6 text-primary-emphasis mt-3">Forecast Results:</p>
-            <div class="spinner-border text-primary d-flex justify-content-center mx-auto my-5" id="spinner"
-                role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+            <h2 class="text-center display-1" id="city-name"></h2>
+            <p class="text-center display-6 text-primary-emphasis mt-3" style="display: none;" id="forecast-Results">Forecast Results:</p>
+            <div id="results" class="container-fluid"></div>
         </div>
         <div>
             <p class="text-center text-muted mt-3">
                 Choose a city to view its weather forecast
             </p>
             <p class="text-center text-muted">
-                Using Celsius. <a class="text text-success" href="#" id="switch-temp">Switch to Fahrenheit</a>
+                Using Celsius.
             </p>
         </div>
     </div>
