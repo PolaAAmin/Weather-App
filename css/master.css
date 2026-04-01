@@ -1,4 +1,8 @@
 body {
-    background-color: #d7d7d7;
-    color: black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    background-image: url("../images/yourialka-clouds-7613361_1920.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }

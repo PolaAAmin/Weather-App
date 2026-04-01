@@ -10,7 +10,7 @@
     <meta http-equiv="“CACHE-CONTROL”" content="”NO-CACHE”" />
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="./css/bootstrap.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/master.css" />
 
     <title>API Project</title>
 </head>
@@ -18,17 +18,70 @@
 <body>
     <!--Main Content-->
     <main>
-        <div class="container">
-            <h1 class="text-center">API Project</h1>
-            <div id="content" class="mt-4">
-                <!-- Content will be loaded here -->
+        <div class="main-image position-relative shadow-lg">
+            <img src="./images/jaclou-dl-clouds-5481190.jpg" alt="main Image" class="w-100 z-0 d-block"
+                style="height: 70vh; object-fit: cover;" />
+
+            <div class="bg-dark color-overlay position-absolute top-0 start-0 w-100 h-100 opacity-25 z-1"></div>
+
+            <div class="position-absolute top-50 start-50 translate-middle z-2">
+                <h1 class="display-3 display-md-4 text-center text-white fw-bold text-shadow-lg">
+                    7timer API Project
+                </h1>
+                <div class="btn-group justify-content-center mt-4 d-flex">
+                    <a class="btn btn-outline-primary px-4 py-2 me-5 rounded-4 shadow-lg" id="btn-7timer"
+                        href="https://www.7timer.info/doc.php?lang=en#civil" target="_blank">7 Timer API</a>
+
+                    <a class="btn btn-primary px-4 py-2 rounded-4 shadow-lg" href="https://github.com/PolaAAmin"
+                        id="btn-github" target="_blank">My Github</a>
+                </div>
+                <p class="lead text-center text-white mt-3 text-shadow-lg">
+                    Welcome to the European Weather Forecast!
+                </p>
             </div>
         </div>
     </main>
     <!-- End Main Content -->
 
+    <br /><br />
+
+    <!--dropdown for selection-->
+    <div class="my-5">
+        <div class="btn-group col-md-3 col-6 d-flex justify-content-center mx-auto">
+            <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="btn-dpd-menu">
+                Select a City
+            </button>
+            <ul class="dropdown-menu" id="dpd-list">
+                <li><a class="dropdown-item" href="#" id="london" value="London">London</a></li>
+                <li><a class="dropdown-item" href="#" id="paris" value="Paris">Paris</a></li>
+                <li><a class="dropdown-item" href="#" id="berlin" value="Berlin">Berlin</a></li>
+                <li><a class="dropdown-item" href="#" id="madrid" value="Madrid">Madrid</a></li>
+            </ul>
+        </div>
+
+        <div class="my-3">
+            <h2 class="text-center" id="city-name"></h2>
+            <p class="text-center display-6 text-primary-emphasis mt-3">Forecast Results:</p>
+            <div class="spinner-border text-primary d-flex justify-content-center mx-auto my-5" id="spinner"
+                role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <div>
+            <p class="text-center text-muted mt-3">
+                Choose a city to view its weather forecast
+            </p>
+            <p class="text-center text-muted">
+                Using Celsius. <a class="text text-success" href="#" id="switch-temp">Switch to Fahrenheit</a>
+            </p>
+        </div>
+    </div>
+
+
+
     <!-- Footer -->
-    <footer>
+    <footer class="d-flex justify-content-center">
         <p class="copyright-text">© Copyright 2023 Pola Ashraf</p>
     </footer>
     <!-- End Footer -->
@@ -37,6 +90,6 @@
 
 <!-- Our codes -->
 <script src="./js/bootstrap.bundle.js"></script>
-<script src="./main.js"></script>
+<script src="./js/main.js"></script>
 
 </html>
