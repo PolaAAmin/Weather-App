@@ -29,7 +29,6 @@ async function fetchWeatherData() {
     try {
         const response = await fetch(`http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=astro&output=json`);
         const weatherData = await response.json();
-        console.log(weatherData);
         return weatherData;
     } catch (error) {
         console.error("Error fetching weather data:", error);
@@ -66,7 +65,6 @@ function updateDropdownListItems(DataJSON) {
     return html;
 }
 
-
 dropdownBtns.dropdownList.addEventListener("click", (event) => {
     if (event.target.classList.contains("dropdown-item")) {
         const city = event.target.getAttribute("value");
@@ -78,12 +76,10 @@ dropdownBtns.dropdownList.addEventListener("click", (event) => {
         latitude = selectedCity.lat;
         fetchWeatherData().then((weatherData) => {
             if (weatherData) {
-                
                 forecastElements.forecastResultsTitle.style.display = "block";
                 const weatherHTML = generateWeatherHTML(weatherData);
                 forecastElements.results.innerHTML = weatherHTML;
                 forecastElements.spinner.style.display = "none";
-                
             } else {
                 forecastElements.results.innerHTML =
                     "<p class='text-danger text-center'>Failed to load weather data.</p>";
