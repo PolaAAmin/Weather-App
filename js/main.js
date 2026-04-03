@@ -25,6 +25,18 @@ async function loadCSV() {
     }
 }
 
+async function fetchWeatherData() {
+    try {
+        const response = await fetch(`http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=astro&output=json`);
+        const weatherData = await response.json();
+        console.log(weatherData);
+        return weatherData;
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+        return null;
+    }
+}
+
 loadCSV().then((csvData) => {
     const jsonData = JSON.stringify(csvData);
     let Data = jsonData.split("\"");
@@ -54,17 +66,7 @@ function updateDropdownListItems(DataJSON) {
     return html;
 }
 
-async function fetchWeatherData() {
-    try {
-        const response = await fetch(`http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=astro&output=json`);
-        const weatherData = await response.json();
-        console.log(weatherData);
-        return weatherData;
-    } catch (error) {
-        console.error("Error fetching weather data:", error);
-        return null;
-    }
-}
+
 dropdownBtns.dropdownList.addEventListener("click", (event) => {
     if (event.target.classList.contains("dropdown-item")) {
         const city = event.target.getAttribute("value");
